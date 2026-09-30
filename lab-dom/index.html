@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab DOM</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 40rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+    .destacado { text-decoration: underline; }
+    .hecha .texto { text-decoration: line-through; opacity: .6; }
+    #tareas li { display: flex; gap: .5rem; align-items: center; margin-bottom: .25rem; }
+    .texto { cursor: pointer; }
+    form { display: grid; gap: .35rem; }
+    label { font-weight: 600; margin-top: .5rem; }
+    input { padding: .4rem; font: inherit; }
+    input[aria-invalid="true"] { border: 2px solid #b3261e; }
+    .error { color: #b3261e; margin: 0; min-height: 1.2em; font-size: .9rem; }
+    button { font: inherit; padding: .4rem .8rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <!-- Parte 1: El DOM -->
+  <h1 id="titulo">Mi primera página dinámica</h1>
+  <ul id="lista"></ul>
+
+  <!-- Parte 2: Eventos -->
+  <h2>Eventos</h2>
+  <button id="saludar" type="button">Saludar</button>
+
+  <h3>Tareas (delegación de eventos)</h3>
+  <ul id="tareas">
+    <li><span class="texto">Leer sobre el DOM</span> <button class="borrar" type="button">Borrar</button></li>
+    <li><span class="texto">Practicar addEventListener</span> <button class="borrar" type="button">Borrar</button></li>
+  </ul>
+  <input id="nueva-tarea" placeholder="Nueva tarea" aria-label="Nueva tarea">
+  <button id="agregar-tarea" type="button">Agregar</button>
+
+  <!-- Parte 3: Validación -->
+  <h2>Registro</h2>
+  <form id="registro" novalidate>
+    <label for="nombre">Nombre</label>
+    <input id="nombre" name="nombre" required aria-describedby="nombre-error">
+    <p id="nombre-error" class="error" aria-live="polite"></p>
+
+    <label for="correo">Correo</label>
+    <input id="correo" name="correo" type="email" required
+           aria-describedby="correo-error">
+    <p id="correo-error" class="error" aria-live="polite"></p>
+
+    <label for="cedula">Cédula</label>
+    <input id="cedula" name="cedula" required
+           pattern="([1-9]|1[0-3]|PE|E|N)-\d{1,4}-\d{1,6}"
+           placeholder="8-123-4567" aria-describedby="cedula-error">
+    <p id="cedula-error" class="error" aria-live="polite"></p>
+
+    <label for="clave">Contraseña</label>
+    <input id="clave" name="clave" type="password" aria-describedby="clave-error">
+    <p id="clave-error" class="error" aria-live="polite"></p>
+
+    <label for="clave2">Confirmar contraseña</label>
+    <input id="clave2" name="clave2" type="password" aria-describedby="clave2-error">
+    <p id="clave2-error" class="error" aria-live="polite"></p>
+
+    <button type="submit">Crear cuenta</button>
+  </form>
+  <section id="resumen" aria-live="polite"></section>
+
+  <!-- defer: el script corre cuando el HTML ya está cargado -->
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscripción a cursos · FISC · UTP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header class="cabecera">
+    <p class="institucion">Universidad Tecnológica de Panamá<br>Facultad de Ingeniería de Sistemas Computacionales</p>
+    <h1>Inscripción a cursos</h1>
+    <p class="nota">Todos los campos son obligatorios, salvo Comentarios.</p>
+  </header>
+
+  <main class="contenido">
+    <form id="inscripcion" novalidate>
+
+      <div class="campo">
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" name="nombre" type="text" autocomplete="name"
+               aria-describedby="nombre-error">
+        <p id="nombre-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="fila">
+        <div class="campo">
+          <label for="cedula">Cédula</label>
+          <input id="cedula" name="cedula" type="text" placeholder="8-123-4567"
+                 autocomplete="off" aria-describedby="cedula-ayuda cedula-error">
+          <p id="cedula-ayuda" class="ayuda">Provincia (1–13, PE, E o N), tomo y asiento.</p>
+          <p id="cedula-error" class="error" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label for="celular">Celular</label>
+          <input id="celular" name="celular" type="tel" inputmode="numeric"
+                 placeholder="6123-4567" autocomplete="tel-national"
+                 aria-describedby="celular-error">
+          <p id="celular-error" class="error" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <div class="campo">
+        <label for="correo">Correo</label>
+        <input id="correo" name="correo" type="email" autocomplete="email"
+               placeholder="nombre@dominio.com" aria-describedby="correo-error">
+        <p id="correo-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="fila">
+        <div class="campo">
+          <label for="nacimiento">Fecha de nacimiento</label>
+          <input id="nacimiento" name="nacimiento" type="date" autocomplete="bday"
+                 aria-describedby="nacimiento-error">
+          <p id="nacimiento-error" class="error" aria-live="polite"></p>
+        </div>
+
+        <div class="campo">
+          <label for="curso">Curso</label>
+          <select id="curso" name="curso" aria-describedby="curso-error">
+            <option value="">Selecciona un curso</option>
+            <option>Desarrollo web con JavaScript</option>
+            <option>Bases de datos relacionales</option>
+            <option>Fundamentos de ciberseguridad</option>
+            <option>Programación en Python</option>
+            <option>Ingeniería de software ágil</option>
+          </select>
+          <p id="curso-error" class="error" aria-live="polite"></p>
+        </div>
+      </div>
+
+      <fieldset id="grupo-modalidad" class="grupo" role="radiogroup"
+                aria-describedby="modalidad-error">
+        <legend>Modalidad</legend>
+        <div class="opciones">
+          <label class="opcion"><input type="radio" name="modalidad" value="presencial"> Presencial</label>
+          <label class="opcion"><input type="radio" name="modalidad" value="virtual"> Virtual</label>
+        </div>
+        <p id="modalidad-error" class="error" aria-live="polite"></p>
+      </fieldset>
+
+      <div class="campo" id="campo-sede" hidden>
+        <label for="sede">Sede</label>
+        <select id="sede" name="sede" aria-describedby="sede-error">
+          <option value="">Selecciona una sede</option>
+          <option>Ciudad de Panamá</option>
+          <option>David</option>
+          <option>Santiago</option>
+        </select>
+        <p id="sede-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="campo">
+        <label for="clave">Contraseña</label>
+        <input id="clave" name="clave" type="password" autocomplete="new-password"
+               aria-describedby="clave-ayuda clave-fuerza-texto clave-error">
+        <p id="clave-ayuda" class="ayuda">Mínimo 8 caracteres, con mayúscula, minúscula, número y símbolo.</p>
+        <div class="fuerza" id="clave-fuerza" data-nivel="0" aria-hidden="true">
+          <span></span><span></span><span></span><span></span><span></span>
+        </div>
+        <p id="clave-fuerza-texto" class="fuerza-texto" aria-live="polite">Fuerza: —</p>
+        <p id="clave-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="campo">
+        <label for="clave2">Confirmar contraseña</label>
+        <input id="clave2" name="clave2" type="password" autocomplete="new-password"
+               aria-describedby="clave2-error">
+        <p id="clave2-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="campo">
+        <label for="comentarios">Comentarios <span class="opcional">(opcional)</span></label>
+        <textarea id="comentarios" name="comentarios" rows="4"
+                  aria-describedby="comentarios-contador comentarios-error"></textarea>
+        <p id="comentarios-contador" class="contador">0 / 200</p>
+        <p id="comentarios-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <div class="campo campo-check">
+        <label class="opcion">
+          <input id="terminos" name="terminos" type="checkbox" aria-describedby="terminos-error">
+          Acepto los términos y condiciones de inscripción.
+        </label>
+        <p id="terminos-error" class="error" aria-live="polite"></p>
+      </div>
+
+      <button type="submit" class="boton">Inscribirme</button>
+    </form>
+
+    <section id="confirmacion" aria-live="polite"></section>
+  </main>
+
+  <script src="validacion.js" defer></script>
+</body>
+</html>

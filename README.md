@@ -16,9 +16,7 @@
 ```
 rodriguez-maria-danah-lab-dom/
 ├── README.md
-├── capturas/
-│   ├── errores.png
-│   └── confirmacion.png
+├── capturas/           # errores de validación y confirmación
 ├── lab-dom/            # laboratorio guiado (index.html + app.js)
 └── inscripcion/        # Tarea 4
     ├── index.html
@@ -38,6 +36,14 @@ rodriguez-maria-danah-lab-dom/
 
 ## Capturas
 
-![Errores de validación](capturas/errores.png)
+### Errores de validación al enviar el formulario vacío
 
-![Tarjeta de confirmación](capturas/confirmacion.png)
+![Errores de validación, parte 1](capturas/Captura%20de%20pantalla%20%284%29.png)
+
+![Errores de validación, parte 2](capturas/Captura%20de%20pantalla%20%283%29.png)
+
+![Errores de validación, parte 3](capturas/Captura%20de%20pantalla%20%282%29.png)
+
+### Tarjeta de confirmación con un formulario válido
+
+![Tarjeta de confirmación](capturas/Captura%20de%20pantalla.png)

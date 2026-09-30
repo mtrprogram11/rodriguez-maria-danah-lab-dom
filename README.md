@@ -1,8 +1,8 @@
 # Laboratorio DOM y Tarea 4 · Validación de formularios del lado cliente
 
-**Estudiantes:** María Rodríguez y Danah Rodríguez
-**Grupo:** 1SF133
-**Curso:** Ingeniería Web · Universidad Tecnológica de Panamá
+**Estudiantes:** María Rodríguez y Danah Rodríguez  
+**Grupo:** 1SF133  
+**Curso:** Ingeniería Web · Universidad Tecnológica de Panamá  
 **Profesora:** Dra. Elba Valderrama Bahamóndez
 
 ## Enlaces
